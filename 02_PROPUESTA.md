@@ -7,23 +7,23 @@ Nombre: Benito
 ## 1. La idea
 
 Título del proyecto:
-Radiografía Electoral de España: Análisis de la Participación y Tendencias de Voto por Municipios (Elecciones Generales 2023)
+Participación electoral y resultados por tamaño de municipio
 ¿Qué pregunta responde y a quién le interesa?
-(por ejemplo: "A un restaurante le interesa saber qué vinos tienen buena nota sin ser caros, para su carta")
-Interesa a analistas políticos, periodistas, consultores de comunicación y partidos. Responde a cómo varía la abstención entre el ámbito rural y el urbano, qué regiones muestran mayor fragmentación política y cuáles son las fortalezas de cada bloque según la población.
+Interesa a cualquier persona que quiera comparar resultados electorales municipales. Responde a cómo varían la abstención y los porcentajes de voto según el tamaño de población del municipio.
 ## 2. Los datos
 
 De dónde salen:
-- [ ] Kaggle
+- [x] Kaggle
 - [ ] Hugging Face
-- [X] Datos míos (dónde los he encontrado): Portal Infoelectoral del Ministerio del Interior de España (Ministerio del Interior)
+- [ ] Datos míos (dónde los he encontrado)
 
-Enlace a los datos: https://www.infoelectoral.interior.gob.es/infoelectoral/doc/datos_elecciones_202307_generales_municipios.zip
+Enlace a los datos: https://www.kaggle.com/datasets/mlprojectbth/spanish-region-and-election-results
+Licencia: Kaggle muestra “Unknown”; hay que comprobar con el autor si se permite redistribuir el CSV antes de subir los datos al repositorio público.
 
-Cuántas filas y columnas tienen: Más de 8.100 filas (una por cada municipio de España) y unas 15 columnas con datos de censo, participación, votos en blanco, nulos y resultados por formación política
+Cuántas filas y columnas tienen: el archivo cargado tiene 8.119 filas y 52 columnas; el CSV preparado para la app tiene 8.119 filas y 13 columnas (12 seleccionadas y el grupo de tamaño municipal). La ficha indica que faltan algunas regiones porque las fuentes estaban incompletas.
 
 Qué es cada fila (un vino, un partido, una venta...):
- Un municipio español en las Elecciones Generales del 23 de julio de 2023
+ Una de las regiones/municipios incluidos en el conjunto. La ficha describe la población a 1 de enero de 2015, pero no identifica claramente el año de los resultados electorales.
 Comprobado (los requisitos están en 03_DATOS.md):
 - [x] Son tabulares, en una sola tabla
 - [x] No los hemos usado en clase
@@ -31,26 +31,27 @@ Comprobado (los requisitos están en 03_DATOS.md):
 - [x] Tienen al menos 6 columnas, con números y con texto
 - [x] Entiendo qué es cada columna
 - [x] Hay algo que limpiar
-- [x] Sé de dónde salen y se pueden usar
+- [x] He confirmado el enlace público
+- [x] He confirmado que la licencia permite publicar los datos
 - [x] El CSV limpio pesará menos de 100 MB
 
 ## 3. Tres preguntas que quiero responder
 
-1. ¿Hay diferencias significativas en la tasa de abstención entre municipios pequeños (ámbito rural) y grandes capitales de provincia?
-2. ¿Qué provincias o Comunidades Autónomas presentan la mayor fragmentación de voto entre bloques políticos?
-3. ¿Cómo se distribuye el porcentaje de voto en blanco y nulo en función del tamaño del censo municipal?
+1. ¿Cómo cambia la abstención media entre municipios pequeños, medianos y grandes?
+2. ¿Cómo varían los porcentajes medios de voto al PP y al PSOE según el tamaño del municipio?
+3. ¿Cambian los porcentajes de votos en blanco y nulos entre municipios con abstención por debajo o por encima de la mediana?
 
 ## 4. La app
 
 ¿Qué filtros pondrías en la barra de la izquierda?
- - Comunidad Autónoma
-- Provincia
-- Rango de población / censo del municipio
+ - Tipo de municipio por tamaño
+- Rango de población
+- Selección de municipio
 ¿Qué pregunta le harías al usuario al final? (como "¿Cuánto cobrarías por tu piso?")
  Selecciona tu municipio: ¿crees que la participación en tu pueblo/ciudad fue mayor o menor que la media nacional?
 ¿Tienen coordenadas para hacer un mapa?
 - [ ] Sí
-- [x] No. Se utilizarán gráficos de barras, diagramas de dispersión y comparativas por provincia/comunidad
+- [x] No. Se utilizarán gráficos de barras, histogramas y diagramas de dispersión; el conjunto no incluye provincia ni Comunidad Autónoma.
 
 ## 5. Plan B
 
